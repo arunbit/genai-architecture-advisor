@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Architecture Advisor Profile",
+  "description": "MVP input contract for an architecture recommendation request.",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "request",
+    "context",
+    "constraints"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "1.0"
+    },
+    "request": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "team_size": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "budget": {
+          "type": "object",
+          "required": [
+            "amount",
+            "currency",
+            "period"
+          ],
+          "properties": {
+            "amount": {
+              "type": "number",
+              "minimum": 0
+            },
+            "currency": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            },
+            "period": {
+              "enum": [
+                "month",
+                "year",
+                "one_time"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "document_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "query_pattern": {
+          "type": "string",
+          "minLength": 1
+        },
+        "traffic": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit",
+            "measurement"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "unit": {
+              "enum": [
+                "requests_per_second",
+                "requests_per_minute",
+                "requests_per_hour",
+                "requests_per_day"
+              ]
+            },
+            "measurement": {
+              "enum": [
+                "average",
+                "expected_maximum",
+                "observed_peak",
+                "unknown"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "max_latency_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "delivery_time": {
+          "type": "object",
+          "required": [
+            "value",
+            "unit"
+          ],
+          "properties": {
+            "value": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "unit": {
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ]
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "requirement",
+          "strength"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^C-[0-9]{3,}$"
+          },
+          "category": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requirement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "strength": {
+            "enum": [
+              "must",
+              "should",
+              "preference"
+            ]
+          },
+          "flexibility": {
+            "enum": [
+              "fixed",
+              "negotiable",
+              "unknown"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

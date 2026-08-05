@@ -1,0 +1,57 @@
+{
+  "contract_version": "1.0",
+  "request": "Recommend an architecture for a restaurant chatbot that performs multi-document synthesis.",
+  "context": {
+    "team_size": 1,
+    "skills": [
+      "Python"
+    ],
+    "budget": {
+      "amount": 300,
+      "currency": "USD",
+      "period": "month"
+    },
+    "document_count": 5000,
+    "query_pattern": "multi-document synthesis",
+    "traffic": {
+      "value": 10,
+      "unit": "requests_per_hour",
+      "measurement": "expected_maximum"
+    },
+    "max_latency_seconds": 3,
+    "delivery_time": {
+      "value": 1,
+      "unit": "week"
+    }
+  },
+  "constraints": [
+    {
+      "id": "C-001",
+      "category": "schedule",
+      "requirement": "Initial version must be ready within one week.",
+      "strength": "must",
+      "flexibility": "fixed"
+    },
+    {
+      "id": "C-002",
+      "category": "implementation",
+      "requirement": "The implementation must be maintainable by one developer whose primary language is Python.",
+      "strength": "must",
+      "flexibility": "fixed"
+    },
+    {
+      "id": "C-003",
+      "category": "cost",
+      "requirement": "The monthly operating budget must not exceed 300 USD.",
+      "strength": "must",
+      "flexibility": "fixed"
+    },
+    {
+      "id": "C-004",
+      "category": "performance",
+      "requirement": "Responses should complete within three seconds.",
+      "strength": "should",
+      "flexibility": "negotiable"
+    }
+  ]
+}
