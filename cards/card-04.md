@@ -1,4 +1,4 @@
-# [Hierarchical summary retrieval for corpus level questions] 
+# [Hierarchical summary retrieval for corpus level questions]
 
 **Card ID:** CARD-004
 

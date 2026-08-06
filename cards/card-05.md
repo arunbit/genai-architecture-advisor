@@ -28,4 +28,4 @@ WHen a single query or a flat infrastructure is sufficient
 
 ## What breaks first at 10×
 
-The latency required is not sufficient 
+The latency required is not sufficient

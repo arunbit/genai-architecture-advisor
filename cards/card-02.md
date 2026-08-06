@@ -4,7 +4,7 @@
 
 ## Problem and context
 
-When highly relevant data can be retrieved  in chunks from a huge corpus  (usually from a vertical database using embedings) and the queries need updated or specific data 
+When highly relevant data can be retrieved  in chunks from a huge corpus  (usually from a vertical database using embedings) and the queries need updated or specific data
 
 ## How it works
 
@@ -12,7 +12,7 @@ Before any generation, queries retrieve relevant chunks of inforation (using emb
 
 ## Use when
 
-When relavant information can be retrieved and other non-relevant information can be easily avoided before generation  by using information retreival systems 
+When relavant information can be retrieved and other non-relevant information can be easily avoided before generation  by using information retreival systems
 
 ## Avoid when
 

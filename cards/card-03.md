@@ -24,7 +24,7 @@ Expensive to manage multiple systems (BM25 and vertical db ) to be current and e
 
 ## Rejected alternative
 
-Dense or RAG only retrival 
+Dense or RAG only retrival
 
 ## What breaks first at 10×
 
