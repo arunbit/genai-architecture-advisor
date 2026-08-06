@@ -1,31 +1,31 @@
-# [Pattern name]
+# [Query Decomposition workflow]
 
 **Card ID:** CARD-005
 
 ## Problem and context
 
-<!-- Arun: What architecture problem does this pattern address? -->
+When single query can not cover the multi-part request and multiple queres are needed
 
 ## How it works
 
-<!-- Arun: Explain the components and their interaction in your own words. -->
+Based on the request, multiple subqueries are intiated and synthesized onto a single forkflow
 
 ## Use when
 
-<!-- Arun: Name the conditions that make this pattern a good fit. -->
+When single query can not cover the multi-part request and multiple queres are needed
 
 ## Avoid when
 
-<!-- Arun: Name the conditions that make this pattern a poor fit. -->
+A single query (or no query) is sufficient for generation
 
 ## Trade-offs
 
-<!-- Arun: Explain benefits, costs, operational burden, and quality implications. -->
+Multi-part querying infrastrucrture has to be maintained
 
 ## Rejected alternative
 
-<!-- Arun: Name one alternative and explain when or why this pattern wins. -->
+WHen a single query or a flat infrastructure is sufficient
 
 ## What breaks first at 10×
 
-<!-- Arun: Name the exact scaling axis, first failure, and swap/upgrade trigger. -->
+The latency required is not sufficient 

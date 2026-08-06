@@ -1,31 +1,34 @@
-# [Pattern name]
+# [Hierarchical summary retrieval for corpus level questions] 
 
 **Card ID:** CARD-004
 
 ## Problem and context
 
-<!-- Arun: What architecture problem does this pattern address? -->
+Corpus level questions require the entire corpus of information
 
 ## How it works
 
-<!-- Arun: Explain the components and their interaction in your own words. -->
+Hierarchical summaries of data are used before generation
 
 ## Use when
 
-<!-- Arun: Name the conditions that make this pattern a good fit. -->
+Broad thematic searches across the whole corpus
 
 ## Avoid when
 
-<!-- Arun: Name the conditions that make this pattern a poor fit. -->
+local chuck level questions OR the information changes fast that summaries are not fresh anymore.
 
 ## Trade-offs
 
-<!-- Arun: Explain benefits, costs, operational burden, and quality implications. -->
+RAPTOR trees have to  be maintained and kept fresh
 
 ## Rejected alternative
 
-<!-- Arun: Name one alternative and explain when or why this pattern wins. -->
+Simple flat top-k chunk retirval are not good for global queries
 
 ## What breaks first at 10×
 
-<!-- Arun: Name the exact scaling axis, first failure, and swap/upgrade trigger. -->
+Derived summaries are stale and updating the indexes is expensive.
+
+## More info
+RAPTOR paper : https://openreview.net/pdf?id=GN921JHCRw

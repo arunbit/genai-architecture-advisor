@@ -1,31 +1,31 @@
-# [Pattern name]
+# [Hybrid (vector and keyword) Retrival]
 
 **Card ID:** CARD-003
 
 ## Problem and context
 
-<!-- Arun: What architecture problem does this pattern address? -->
+When information needed cant be just be obtained semantically from vector search or just from basic keyword search (BM25)
 
 ## How it works
 
-<!-- Arun: Explain the components and their interaction in your own words. -->
+Reciprocal Ranked Fusion (RRF) merges both the vector search and BM25 using ranked lists
 
 ## Use when
 
-<!-- Arun: Name the conditions that make this pattern a good fit. -->
+When systems are able to process the right amounts of data to form the merged lists within the allowed latecy to create highly relevant data before generation
 
 ## Avoid when
 
-<!-- Arun: Name the conditions that make this pattern a poor fit. -->
+The latency requied to do an effective merged ranking does not agree with the expected latency OR simply data is too small for this approach to be sued.
 
 ## Trade-offs
 
-<!-- Arun: Explain benefits, costs, operational burden, and quality implications. -->
+Expensive to manage multiple systems (BM25 and vertical db ) to be current and effective to have the latency within target
 
 ## Rejected alternative
 
-<!-- Arun: Name one alternative and explain when or why this pattern wins. -->
+Dense or RAG only retrival 
 
 ## What breaks first at 10×
 
-<!-- Arun: Name the exact scaling axis, first failure, and swap/upgrade trigger. -->
+The cost of bringing together the merged list starts exceeding the latency expecation  and then finally the data exceeds so much that the latency is also exceding way beyond tolerable levels.
