@@ -31,7 +31,7 @@ def main() -> int:
 
     if not args.prompt.is_file():
         parser.error(
-            "The Arun-authored prompt is missing. Create prompts/synthesis.md first."
+            "The synthesis prompt is missing. Create prompts/synthesis.md first."
         )
 
     with args.profile.open(encoding="utf-8") as file:

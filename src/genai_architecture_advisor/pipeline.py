@@ -66,7 +66,7 @@ class AdvisorPipeline:
 def _compose_synthesis_input(
     base_prompt: str, profile: dict[str, Any], stuffed_cards: str
 ) -> str:
-    """Mechanical framing around Arun's synthesis instructions."""
+    """Mechanical framing around the product's synthesis instructions."""
 
     return (
         f"{base_prompt.strip()}\n\n"

@@ -32,7 +32,7 @@ class FakeSynthesizer:
         retrieved: RetrievedContext,
     ) -> dict[str, Any]:
         if not synthesis_prompt.strip():
-            raise ValueError("The Arun-authored synthesis prompt is empty.")
+            raise ValueError("The synthesis prompt is empty.")
 
         constraints = profile.get("constraints", [])
         if not constraints:

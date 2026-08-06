@@ -17,7 +17,7 @@ def test_walking_skeleton_produces_valid_cited_report(tmp_path: Path) -> None:
     profile = _example_profile()
     pipeline = _pipeline(tmp_path)
 
-    result = pipeline.run(profile, "Arun-authored test prompt.")
+    result = pipeline.run(profile, "Test-only synthesis instructions.")
 
     assert result.report["status"] == "recommendation"
     assert result.report["recommendations"][0]["card_citations"] == ["CARD-001"]
@@ -32,7 +32,7 @@ def test_empty_constraints_request_clarification(tmp_path: Path) -> None:
     profile = _example_profile()
     profile["constraints"] = []
 
-    result = _pipeline(tmp_path).run(profile, "Arun-authored test prompt.")
+    result = _pipeline(tmp_path).run(profile, "Test-only synthesis instructions.")
 
     assert result.report["status"] == "needs_clarification"
     assert result.report["recommendations"] == []
@@ -43,7 +43,7 @@ def test_invalid_input_returns_contract_shaped_feedback(tmp_path: Path) -> None:
     profile = _example_profile()
     profile["context"]["team_size"] = -1
 
-    result = _pipeline(tmp_path).run(profile, "Arun-authored test prompt.")
+    result = _pipeline(tmp_path).run(profile, "Test-only synthesis instructions.")
 
     assert result.report["status"] == "invalid_input"
     assert result.report["processing_feedback"]["invalid_information"]
@@ -56,7 +56,7 @@ def test_nested_unknown_field_is_reported_without_echoing_value(
     profile = _example_profile()
     profile["context"]["budget"]["private_note"] = "do not echo this value"
 
-    result = _pipeline(tmp_path).run(profile, "Arun-authored test prompt.")
+    result = _pipeline(tmp_path).run(profile, "Test-only synthesis instructions.")
 
     unprocessed = result.report["processing_feedback"]["unprocessed_input"]
     assert unprocessed == [
