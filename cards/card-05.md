@@ -1,31 +1,31 @@
-# [Query Decomposition workflow]
+# [Query Decomposition Workflow]
 
 **Card ID:** CARD-005
 
 ## Problem and context
 
-When single query can not cover the multi-part request and multiple queres are needed
+When a single query cannot cover the multi-part request and multiple queries are needed.
 
 ## How it works
 
-Based on the request, multiple subqueries are intiated and synthesized onto a single forkflow
+Based on the request, multiple subqueries are initiated and synthesized into a single workflow.
 
 ## Use when
 
-When single query can not cover the multi-part request and multiple queres are needed
+When a single query cannot cover the multi-part request and multiple queries are needed.
 
 ## Avoid when
 
-A single query (or no query) is sufficient for generation
+A single query (or no query) is sufficient for generation.
 
 ## Trade-offs
 
-Multi-part querying infrastrucrture has to be maintained
+Multi-part querying infrastructure has to be maintained.
 
 ## Rejected alternative
 
-WHen a single query or a flat infrastructure is sufficient
+When a single query or a flat infrastructure is sufficient.
 
 ## What breaks first at 10×
 
-The latency required is not sufficient
+The required latency cannot be met.

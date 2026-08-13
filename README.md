@@ -15,8 +15,7 @@ The current version is an offline walking skeleton. It:
 
 The fake synthesizer does not call an LLM and does not make a genuine architecture judgment. It proves that the application wiring, contracts, citations, and report rendering work deterministically.
 
-
-## Design Decisions
+## Design decisions
 - The recommendations are limited to the supplied architecture cards.
 - Input and output are protected by JSON Schema contracts.
 - Constraint and card IDs provide evidence traceability.
@@ -30,11 +29,11 @@ The current retriever includes every card in the synthesis context. This is inte
 If the card corpus grows by 10×, context size and the model's position-related ability to use every card are likely to degrade first. A live LLM path would also experience increased token usage, latency, and cost. The trigger for replacing `StuffEverythingRetriever` is when the full corpus no longer fits the context budget or fails defined latency, cost, or recommendation-quality targets.
 
 ## Not implemented yet
-	- Live LLM integration
-	- Embeddings or vector databases
-	- Selective retrieval
-	- Cost calculation
-	- API or user interface
+- Live LLM integration
+- Embeddings or vector databases
+- Selective retrieval
+- Cost calculation
+- API or user interface
 
 ## Quick start
 
